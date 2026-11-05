@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const isOpen = ref(false)
+const isHome = computed(() => route.path === '/')
 
 const links = [
   { label: 'Home', to: '/' },
@@ -38,7 +39,7 @@ onBeforeUnmount(() => {
   <header class="sticky top-0 z-50">
     <nav class="navbar min-h-14 bg-primary px-6 text-white">
       <!-- Desktop menu -->
-      <ul class="hidden flex-1 items-center justify-center gap-9 lg:flex">
+      <ul v-if="!isHome" class="hidden flex-1 items-center justify-center gap-9 lg:flex">
         <li v-for="link in links" :key="link.to">
           <NuxtLink
             :to="link.to"
