@@ -1,6 +1,5 @@
 <template>
-    <body>
-
+    <div>
         <div class="purple-bar"></div>
 
         <main class="content-wrapper">
@@ -23,6 +22,5 @@
 
         <div class="purple-bar footer-bar"></div>
 
-    </body>
-
+    </div>
 </template>
