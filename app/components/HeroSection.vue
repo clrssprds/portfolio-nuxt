@@ -32,7 +32,7 @@ const buttons = [
           v-for="button in buttons"
           :key="button.to"
           :to="button.to"
-          class="btn btn-primary rounded-full font-normal italic hover:border-secondary hover:bg-secondary hover:text-white"
+          class="whitespace-nowrap rounded-full border-2 border-primary bg-primary px-5 py-2.5 italic text-base-content transition-colors hover:border-secondary hover:bg-secondary hover:text-white"
         >
           {{ button.label }}
         </NuxtLink>
