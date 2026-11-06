@@ -1,14 +1,15 @@
 <script setup lang="ts">
+import { PhHouse, PhUser, PhCode, PhCertificate, PhEnvelope, PhList, PhX } from '@phosphor-icons/vue'
 const route = useRoute()
 const isOpen = ref(false)
 const isHome = computed(() => route.path === '/')
 
 const links = [
-  { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
-  { label: 'Tech Stack', to: '/tech-stack' },
-  { label: 'Certifications', to: '/certifications' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'Home', to: '/', icon: PhHouse },
+  { label: 'About', to: '/about', icon: PhUser },
+  { label: 'Tech Stack', to: '/tech-stack', icon: PhCode },
+  { label: 'Certifications', to: '/certifications', icon: PhCertificate },
+  { label: 'Contact', to: '/contact', icon: PhEnvelope },
 ]
 
 const close = () => {
@@ -43,8 +44,9 @@ onBeforeUnmount(() => {
         <li v-for="link in links" :key="link.to">
           <NuxtLink
             :to="link.to"
-            class="border-b-2 border-transparent pb-1 text-[0.95rem] italic transition-colors hover:border-white/55 [&.router-link-exact-active]:border-white [&.router-link-exact-active]:font-semibold"
+            class="inline-flex items-center gap-1.5 border-b-2 border-transparent pb-1 text-[0.95rem] italic transition-colors hover:border-white/55 [&.router-link-exact-active]:border-white [&.router-link-exact-active]:font-semibold"
           >
+            <component :is="link.icon" :size="18" />
             {{ link.label }}
           </NuxtLink>
         </li>
@@ -59,16 +61,7 @@ onBeforeUnmount(() => {
         :aria-expanded="isOpen"
         @click="isOpen = true"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="size-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+        <PhList :size="22" />
       </button>
     </nav>
 
@@ -93,24 +86,14 @@ onBeforeUnmount(() => {
       :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
       :inert="!isOpen"
     >
-      <div class="flex h-14 items-center justify-between border-b border-white/30 px-6">
-        <span class="font-serif text-lg font-bold italic">Menu</span>
+      <div class="flex h-14 items-center justify-end border-b border-white/30 px-6">
         <button
           type="button"
           class="btn btn-square btn-ghost btn-sm text-white"
           aria-label="Close menu"
           @click="close"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="size-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path stroke-linecap="round" d="M6 6l12 12M6 18L18 6" />
-          </svg>
+          <PhX :size="20" />
         </button>
       </div>
 
@@ -118,8 +101,9 @@ onBeforeUnmount(() => {
         <li v-for="link in links" :key="link.to">
           <NuxtLink
             :to="link.to"
-            class="block px-6 py-3.5 italic text-white transition-colors hover:bg-base-100 hover:text-primary [&.router-link-exact-active]:bg-white/20 [&.router-link-exact-active]:font-semibold"
+            class="flex items-center gap-3 px-6 py-3.5 italic text-white transition-colors hover:bg-base-100 hover:text-primary [&.router-link-exact-active]:bg-white/20 [&.router-link-exact-active]:font-semibold"
           >
+            <component :is="link.icon" :size="20" />
             {{ link.label }}
           </NuxtLink>
         </li>
