@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { PhUser, PhCode, PhCertificate, PhEnvelope } from '@phosphor-icons/vue'
+
 const buttons = [
-  { label: 'About', to: '/about' },
-  { label: 'Tech Stack', to: '/tech-stack' },
-  { label: 'Certifications', to: '/certifications' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'About', to: '/about', icon: PhUser },
+  { label: 'Tech Stack', to: '/tech-stack', icon: PhCode },
+  { label: 'Certifications', to: '/certifications', icon: PhCertificate },
+  { label: 'Contact', to: '/contact', icon: PhEnvelope },
 ]
 </script>
 
@@ -32,8 +34,9 @@ const buttons = [
           v-for="button in buttons"
           :key="button.to"
           :to="button.to"
-          class="whitespace-nowrap rounded-full border-2 border-primary bg-primary px-5 py-2.5 italic text-base-content transition-colors hover:border-secondary hover:bg-secondary hover:text-white"
+          class="inline-flex items-center gap-2 whitespace-nowrap rounded-full border-2 border-primary bg-primary px-5 py-2.5 italic text-base-content transition-colors hover:border-secondary hover:bg-secondary hover:text-white"
         >
+          <component :is="button.icon" :size="18" />
           {{ button.label }}
         </NuxtLink>
       </div>
