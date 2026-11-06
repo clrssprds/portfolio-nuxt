@@ -13,9 +13,11 @@
     "@phosphor-icons/vue": "^2.2.1",
     "@tailwindcss/vite": "^4.3.4",
     "daisyui": "^5.7.50",
+    "echarts": "^6.1.0",
     "nuxt": "^4.6.2",
     "tailwindcss": "^4.3.4",
     "vue": "^3.5.44",
+    "vue-echarts": "^8.3.2",
     "vue-router": "^5.4.0"
   }
 }
