@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app'
+import { PhHouse } from '@phosphor-icons/vue'
 
 const props = defineProps<{ error: NuxtError }>()
 
@@ -35,9 +36,10 @@ const goHome = () => clearError({ redirect: '/' })
       </p>
       <button
         type="button"
-        class="cursor-pointer whitespace-nowrap rounded-full border-2 border-primary bg-primary px-5 py-2.5 italic text-base-content transition-colors hover:border-secondary hover:bg-secondary hover:text-white"
+        class="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border-2 border-primary bg-primary px-5 py-2.5 italic text-base-content transition-colors hover:border-secondary hover:bg-secondary hover:text-white"
         @click="goHome"
       >
+        <PhHouse :size="18" />
         Back to Home
       </button>
     </section>
