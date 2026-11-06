@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  build: { transpile: ['echarts', 'zrender', 'vue-echarts'] },
   app: {
     head: {
       htmlAttrs: { lang: 'en' },

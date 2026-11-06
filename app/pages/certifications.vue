@@ -46,6 +46,8 @@ const selected = ref<{ src: string; alt: string } | null>(null)
       />
     </ul>
 
+    <CertIssuerChart />
+
     <ImageLightbox :src="selected?.src ?? null" :alt="selected?.alt" @close="selected = null" />
   </section>
 </template>
