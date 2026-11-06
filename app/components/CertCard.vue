@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { PhArrowSquareOut } from '@phosphor-icons/vue'
 defineProps<{
   title: string
   image: string
@@ -20,11 +21,12 @@ const emit = defineEmits<{ zoom: [] }>()
         class="w-full rounded-md transition duration-200 hover:-translate-y-1 hover:shadow-xl"
       />
     </button>
-    <a
-      :href="verifyUrl" target="_blank" rel="noopener"
-      class="link link-hover mt-3 text-center text-sm font-light italic"
-    >
-      {{ title }}
-    </a>
+      <a
+        :href="verifyUrl" target="_blank" rel="noopener"
+        class="link link-hover mt-3 inline-flex items-center justify-center gap-1.5 text-center text-sm font-light italic"
+      >
+        {{ title }}
+        <PhArrowSquareOut :size="16" />
+      </a>
   </li>
 </template>
