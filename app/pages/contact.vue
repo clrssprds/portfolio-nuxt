@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import { PhLinkedinLogo, PhGithubLogo } from '@phosphor-icons/vue'
+
 useHead({ title: 'Contact' })
 
 useSeoMeta({
-  description:
-    'Get in touch with Clarisse Paredes through LinkedIn and GitHub.',
+  description: 'Get in touch with Clarisse Paredes through LinkedIn and GitHub.',
   ogTitle: 'Contact | Clarisse Paredes',
   ogDescription: 'Connect with me on LinkedIn and GitHub.',
   ogType: 'website',
@@ -14,12 +15,14 @@ const contacts = [
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/clarisse-paredes/',
-    icon: 'https://cdn-icons-png.flaticon.com/512/174/174857.png',
+    icon: PhLinkedinLogo,
+    color: '#9a849f',
   },
   {
     label: 'GitHub',
     href: 'https://github.com/clrssprds',
-    icon: 'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+    icon: PhGithubLogo,
+    color: '#9a849f',
   },
 ]
 </script>
@@ -35,6 +38,7 @@ const contacts = [
         :href="contact.href"
         :label="contact.label"
         :icon="contact.icon"
+        :color="contact.color"
       />
     </div>
   </section>
